@@ -1,0 +1,29 @@
+name: Format
+
+on: [push, pull_request, release]
+
+jobs:
+  flutter-format:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v1.3.2
+      - name: Run format
+        run: flutter format --set-exit-if-changed .
+
+  import_sorter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v1.3.2
+      - name: Run import_sorter
+        run: |
+          flutter pub get
+          flutter pub run import_sorter:main
+          git checkout pubspec.lock
+          git diff --exit-code
