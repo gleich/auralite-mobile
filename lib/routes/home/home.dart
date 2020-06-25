@@ -1,9 +1,6 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-// 📦 Package imports:
-// import 'package:flutter_svg/svg.dart';
-
 class HomeRoute extends StatelessWidget {
   static const routeName = '/home';
 
@@ -26,19 +23,37 @@ class HomeRoute extends StatelessWidget {
             const Text(
               'Welcome',
               style: TextStyle(
-                fontSize: 40,
+                fontSize: 45,
               ),
             ),
-            const Text(
-              'to the future',
-              style: TextStyle(
-                fontSize: 50,
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                const Text(
+                  'to the ',
+                  style: TextStyle(
+                    fontSize: 50,
+                  ),
+                ),
+                Text(
+                  'future',
+                  style: TextStyle(
+                    fontSize: 50,
+                    decoration: TextDecoration.underline,
+                    decorationStyle: TextDecorationStyle.wavy,
+                    decorationColor: Theme.of(context).primaryColor,
+                  ),
+                ),
+              ],
             ),
             const SizedBox(
               height: 30,
             ),
             RaisedButton(
+              highlightColor: Colors.transparent,
+              elevation: 10,
+              highlightElevation: 15,
+              splashColor: Colors.transparent,
               onPressed: () => print('Pressed the button!'),
               color: Theme.of(context).primaryColor,
               shape: RoundedRectangleBorder(
@@ -52,11 +67,13 @@ class HomeRoute extends StatelessWidget {
                     'Get Started',
                     style: TextStyle(
                       fontSize: 30,
+                      color: Colors.white,
                     ),
                   ),
                   const Icon(
                     Icons.chevron_right,
                     size: 40,
+                    color: Colors.white,
                   ),
                 ],
               ),
