@@ -57,7 +57,7 @@ class HomeRoute extends StatelessWidget {
               onPressed: () => print('Pressed the button!'),
               color: Theme.of(context).primaryColor,
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(30),
+                borderRadius: BorderRadius.circular(10),
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
