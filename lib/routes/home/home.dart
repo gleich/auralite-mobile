@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
-import 'package:flutter_svg/svg.dart';
+// import 'package:flutter_svg/svg.dart';
 
 class HomeRoute extends StatelessWidget {
   static const routeName = '/home';
@@ -15,8 +15,8 @@ class HomeRoute extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            SvgPicture.asset(
-              'assets/images/logo.svg',
+            Image.asset(
+              'assets/images/logo.png',
               height: 200,
               width: 200,
             ),
