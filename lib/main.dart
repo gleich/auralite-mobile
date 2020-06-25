@@ -1,8 +1,8 @@
 // 🐦 Flutter imports:
+import 'package:auralite/routes/setup/welcome/welcome.dart';
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
-import 'package:auralite/routes/home/home.dart';
 import 'package:auralite/themes.dart';
 
 void main() => runApp(_Auralite());
@@ -15,10 +15,10 @@ class _Auralite extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: Themes().lightTheme,
       darkTheme: Themes().darkTheme,
-      initialRoute: HomeRoute.routeName,
+      initialRoute: SetupWelcomeRoute.routeName,
       // themeMode: ThemeMode.light,
       routes: {
-        HomeRoute.routeName: (BuildContext ctx) => HomeRoute(),
+        SetupWelcomeRoute.routeName: (BuildContext ctx) => SetupWelcomeRoute(),
       },
     );
   }
