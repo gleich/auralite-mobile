@@ -1,10 +1,12 @@
 // 🐦 Flutter imports:
-import 'package:auralite/routes/setup/login/login.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 // 📦 Package imports:
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
+
+// 🌎 Project imports:
+import 'package:auralite/routes/setup/login/login.dart';
 
 class SetupWelcomeRoute extends StatelessWidget {
   static const routeName = '/setup/welcome';

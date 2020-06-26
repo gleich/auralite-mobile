@@ -1,5 +1,8 @@
-import 'package:auralite/widgets/app_bar.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+
+// 🌎 Project imports:
+import 'package:auralite/widgets/app_bar.dart';
 
 class SetupLoginRoute extends StatelessWidget {
   static const routeName = '/setup/login';
@@ -41,7 +44,7 @@ class SetupLoginRoute extends StatelessWidget {
                     focusColor: Theme.of(context).primaryColor,
                     fillColor: Theme.of(context).primaryColor,
                     hoverColor: Theme.of(context).primaryColor,
-                    filled: true,
+                    // filled: true,
                   ),
                   cursorColor: Theme.of(context).primaryColor,
                   keyboardType: TextInputType.emailAddress,

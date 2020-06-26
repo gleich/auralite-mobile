@@ -1,8 +1,8 @@
 // 🐦 Flutter imports:
-import 'package:auralite/routes/setup/login/login.dart';
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
+import 'package:auralite/routes/setup/login/login.dart';
 import 'package:auralite/routes/setup/welcome/welcome.dart';
 import 'package:auralite/themes.dart';
 
