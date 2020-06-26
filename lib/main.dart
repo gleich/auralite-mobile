@@ -1,4 +1,5 @@
 // 🐦 Flutter imports:
+import 'package:auralite/routes/setup/login/login.dart';
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
@@ -19,6 +20,7 @@ class _Auralite extends StatelessWidget {
       // themeMode: ThemeMode.light,
       routes: {
         SetupWelcomeRoute.routeName: (BuildContext ctx) => SetupWelcomeRoute(),
+        SetupLoginRoute.routeName: (BuildContext ctx) => SetupLoginRoute(),
       },
     );
   }

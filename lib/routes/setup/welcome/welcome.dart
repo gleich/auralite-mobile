@@ -1,5 +1,7 @@
 // 🐦 Flutter imports:
+import 'package:auralite/routes/setup/login/login.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 // 📦 Package imports:
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
@@ -66,7 +68,13 @@ class SetupWelcomeRoute extends StatelessWidget {
                 RaisedButton(
                   elevation: 10,
                   highlightElevation: 15,
-                  onPressed: () => print('Pressed the button!'),
+                  onPressed: () {
+                    HapticFeedback.mediumImpact();
+                    return Navigator.popAndPushNamed(
+                      context,
+                      SetupLoginRoute.routeName,
+                    );
+                  },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     mainAxisSize: MainAxisSize.min,

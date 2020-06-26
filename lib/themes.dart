@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class Themes {
   // Shared constant values
-  static const _primaryColor = Color.fromRGBO(104, 117, 245, 1);
+  static const _primaryColor = Color.fromRGBO(88, 80, 237, 1);
   static const _fontFamily = 'Nunito Sans';
 
   // Shared dynamic values
@@ -15,19 +15,39 @@ class Themes {
       borderRadius: BorderRadius.circular(10),
     ),
   );
+  AppBarTheme _appBarTheme(Color scaffoldBackgroundColor) => AppBarTheme(
+        color: scaffoldBackgroundColor,
+        elevation: 0,
+      );
+  TextTheme _textTheme(Color textColor) => TextTheme(
+        headline4: TextStyle(
+          color: textColor,
+        ),
+      );
+
+  // Shared dark mode values:
+  static const _darkScaffoldBackgroundColor = Color.fromRGBO(24, 26, 27, 1);
+
+  // Shared light mode values:
+  static const _lightScaffoldBackgroundColor = Colors.white;
 
   ThemeData get darkTheme => ThemeData(
         brightness: Brightness.dark,
         primaryColor: _primaryColor,
-        scaffoldBackgroundColor: Color.fromRGBO(24, 26, 27, 1),
+        textTheme: _textTheme(Colors.white),
+        scaffoldBackgroundColor: _darkScaffoldBackgroundColor,
         fontFamily: _fontFamily,
         buttonTheme: _buttonTheme,
+        appBarTheme: _appBarTheme(_darkScaffoldBackgroundColor),
       );
 
   ThemeData get lightTheme => ThemeData(
         brightness: Brightness.light,
         primaryColor: _primaryColor,
+        textTheme: _textTheme(Colors.black),
+        scaffoldBackgroundColor: _lightScaffoldBackgroundColor,
         fontFamily: _fontFamily,
         buttonTheme: _buttonTheme,
+        appBarTheme: _appBarTheme(_lightScaffoldBackgroundColor),
       );
 }
