@@ -33,12 +33,16 @@ class SetupLoginRoute extends StatelessWidget {
                     if (text.isEmpty) {
                       return 'Please enter your email';
                     }
+                    if (!text.contains('@')) {
+                      return "Please enter a valid email";
+                    }
                     return null;
                   },
                   decoration: InputDecoration(
-                    labelText: 'Username',
+                    labelText: 'Email',
                   ),
                   cursorColor: Theme.of(context).primaryColor,
+                  keyboardType: TextInputType.emailAddress,
                   onSaved: (newValue) => _username = newValue,
                 ),
               ),
