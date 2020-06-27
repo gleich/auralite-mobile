@@ -8,10 +8,10 @@ class SetupLoginRoute extends StatelessWidget {
   static const routeName = '/setup/login';
 
   final _formKey = GlobalKey<FormState>();
-  String username;
 
   @override
   Widget build(BuildContext context) {
+    String _username;
     return Scaffold(
       appBar: AppBar(
         title: AuraliteAppBarTitle(
@@ -31,26 +31,33 @@ class SetupLoginRoute extends StatelessWidget {
                 child: TextFormField(
                   validator: (text) {
                     if (text.isEmpty) {
-                      return 'Please enter some text';
-                    }
-                    if (!text.contains('@')) {
-                      return "Please enter a valid email";
+                      return 'Please enter your email';
                     }
                     return null;
                   },
                   decoration: InputDecoration(
-                    hintText: 'example@example.com',
-                    labelText: 'Username/Email',
-                    focusColor: Theme.of(context).primaryColor,
-                    fillColor: Theme.of(context).primaryColor,
-                    hoverColor: Theme.of(context).primaryColor,
-                    // filled: true,
+                    labelText: 'Username',
+                  ),
+                  cursorColor: Theme.of(context).primaryColor,
+                  onSaved: (newValue) => _username = newValue,
+                ),
+              ),
+              const SizedBox(height: 60),
+              Container(
+                width: 290,
+                child: TextFormField(
+                  validator: (text) {
+                    if (text.isEmpty) {
+                      return 'Please enter your password';
+                    }
+                    return null;
+                  },
+                  decoration: InputDecoration(
+                    labelText: 'Password',
                   ),
                   cursorColor: Theme.of(context).primaryColor,
                   keyboardType: TextInputType.emailAddress,
-                  onSaved: (newValue) => {
-                    username = newValue,
-                  },
+                  onSaved: (newValue) => _username = newValue,
                 ),
               ),
             ],

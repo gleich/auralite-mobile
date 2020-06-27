@@ -34,6 +34,7 @@ class Themes {
   ThemeData get darkTheme => ThemeData(
         brightness: Brightness.dark,
         primaryColor: _primaryColor,
+        accentColor: _primaryColor,
         textTheme: _textTheme(Colors.white),
         scaffoldBackgroundColor: _darkScaffoldBackgroundColor,
         fontFamily: _fontFamily,

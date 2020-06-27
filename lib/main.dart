@@ -17,7 +17,7 @@ class _Auralite extends StatelessWidget {
       theme: Themes().lightTheme,
       darkTheme: Themes().darkTheme,
       initialRoute: SetupWelcomeRoute.routeName,
-      // themeMode: ThemeMode.light,
+      // themeMode: ThemeMode.dark,
       routes: {
         SetupWelcomeRoute.routeName: (BuildContext ctx) => SetupWelcomeRoute(),
         SetupLoginRoute.routeName: (BuildContext ctx) => SetupLoginRoute(),
