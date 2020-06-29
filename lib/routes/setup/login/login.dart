@@ -1,9 +1,9 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 // 🌎 Project imports:
 import 'package:auralite/widgets/app_bar.dart';
-import 'package:flutter/services.dart';
 
 class SetupLoginRoute extends StatelessWidget {
   static const routeName = '/setup/login';
