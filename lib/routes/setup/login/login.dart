@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
 import 'package:auralite/widgets/app_bar.dart';
+import 'package:flutter/services.dart';
 
 class SetupLoginRoute extends StatelessWidget {
   static const routeName = '/setup/login';
@@ -11,7 +12,7 @@ class SetupLoginRoute extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String _username;
+    String username, password;
     return Scaffold(
       appBar: AppBar(
         title: AuraliteAppBarTitle(
@@ -43,26 +44,45 @@ class SetupLoginRoute extends StatelessWidget {
                   ),
                   cursorColor: Theme.of(context).primaryColor,
                   keyboardType: TextInputType.emailAddress,
-                  onSaved: (newValue) => _username = newValue,
+                  onSaved: (newValue) => username = newValue,
                 ),
               ),
-              const SizedBox(height: 60),
-              Container(
-                width: 290,
-                child: TextFormField(
-                  validator: (text) {
-                    if (text.isEmpty) {
-                      return 'Please enter your password';
-                    }
-                    return null;
-                  },
-                  decoration: InputDecoration(
-                    labelText: 'Password',
-                  ),
-                  cursorColor: Theme.of(context).primaryColor,
-                  keyboardType: TextInputType.emailAddress,
-                  onSaved: (newValue) => _username = newValue,
+              Padding(
+                padding: const EdgeInsets.only(
+                  top: 30,
+                  bottom: 60,
                 ),
+                child: Container(
+                  width: 290,
+                  child: TextFormField(
+                    validator: (text) {
+                      if (text.isEmpty) {
+                        return 'Please enter your password';
+                      }
+                      return null;
+                    },
+                    decoration: InputDecoration(
+                      labelText: 'Password',
+                    ),
+                    cursorColor: Theme.of(context).primaryColor,
+                    onSaved: (newValue) => password = newValue,
+                    obscureText: true,
+                  ),
+                ),
+              ),
+              RaisedButton(
+                elevation: 10,
+                highlightElevation: 15,
+                onPressed: () {
+                  HapticFeedback.lightImpact();
+                  final form = _formKey.currentState;
+                  if (form.validate()) {
+                    form.save();
+                  }
+                  print(username);
+                  print(password);
+                },
+                child: Text('Submit'),
               ),
             ],
           ),

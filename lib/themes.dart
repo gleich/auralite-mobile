@@ -23,10 +23,14 @@ class Themes {
         headline4: TextStyle(
           color: textColor,
         ),
+        button: TextStyle(
+          fontSize: 30,
+          color: Colors.white,
+        ),
       );
 
   // Shared dark mode values:
-  static const _darkScaffoldBackgroundColor = Color.fromRGBO(24, 26, 27, 1);
+  static const _darkScaffoldBackgroundColor = Color.fromRGBO(23, 23, 29, 1);
 
   // Shared light mode values:
   static const _lightScaffoldBackgroundColor = Colors.white;
