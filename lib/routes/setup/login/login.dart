@@ -15,8 +15,10 @@ class SetupLoginRoute extends StatelessWidget {
     String username, password;
     return Scaffold(
       appBar: AppBar(
-        title: AuraliteAppBarTitle(
-          text: 'Login',
+        title: Center(
+          child: AuraliteAppBarTitle(
+            text: 'Login',
+          ),
         ),
       ),
       body: Form(
@@ -82,7 +84,9 @@ class SetupLoginRoute extends StatelessWidget {
                   print(username);
                   print(password);
                 },
-                child: Text('Submit'),
+                child: Text(
+                  'Submit',
+                ),
               ),
             ],
           ),
