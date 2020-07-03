@@ -1,29 +1,31 @@
 name: Format
 
-on: [push, pull_request, release]
+on:
+  - push
+  - pull_request
 
 jobs:
-  flutter-format:
+  dartfmt:
     runs-on: ubuntu-latest
+
+    container:
+      image: google/dart:latest
 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v1.3.2
       - name: Run format
-        run: flutter format --set-exit-if-changed .
+        run: dartfmt --dry-run --set-exit-if-changed .
 
   import_sorter:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v1.3.2
+      - uses: subosito/flutter-action@v1.3.2
+        with:
+          channel: 'beta'
       - name: Run import_sorter
         run: |
           flutter pub get
-          flutter pub run import_sorter:main
-          git checkout pubspec.lock
-          git diff --exit-code
+          flutter pub run import_sorter:main --exit-if-changed
